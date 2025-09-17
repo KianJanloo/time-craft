@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 
 // Category data interface
 export interface CategoryData {

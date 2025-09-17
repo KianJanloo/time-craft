@@ -47,7 +47,7 @@ export default function AboutPage() {
                 <p className="text-lg text-gray-600 mb-6">
                   Each watch in our collection is meticulously crafted by master watchmakers who 
                   have dedicated their lives to perfecting the art of horology. We believe that 
-                  a watch is more than just a timekeeping device—it's a statement of personal style 
+                  a watch is more than just a timekeeping device—it&apos;s a statement of personal style 
                   and a testament to the enduring value of quality craftsmanship.
                 </p>
                 <p className="text-lg text-gray-600">

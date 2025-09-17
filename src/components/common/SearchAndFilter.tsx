@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { WatchData } from '@/types/watchData.type';
-import { SearchIcon, FilterIcon, SortAscendingIcon, SortDescendingIcon, XIcon } from '@/services/icons';
+import { SearchIcon, FilterIcon, XIcon } from '@/services/icons';
 
 interface SearchAndFilterProps {
   watches: WatchData[];

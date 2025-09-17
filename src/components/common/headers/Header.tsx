@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link";
-import { SearchIcon, CartIcon, MenuIcon, LogoIcon, CloseIcon } from "@/services/icons";
+import { SearchIcon, CartIcon, MenuIcon, LogoIcon } from "@/services/icons";
 import { useCartStore } from "@/stores/cartStore";
 
 export default function Header() {

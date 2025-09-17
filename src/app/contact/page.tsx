@@ -10,7 +10,7 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Get in touch with our team. We're here to help you find the perfect timepiece.
+              Get in touch with our team. We&apos;re here to help you find the perfect timepiece.
             </p>
           </div>
         </section>

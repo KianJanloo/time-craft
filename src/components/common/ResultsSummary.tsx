@@ -1,6 +1,5 @@
 'use client';
 
-import { WatchData } from '@/types/watchData.type';
 
 interface ResultsSummaryProps {
   totalWatches: number;

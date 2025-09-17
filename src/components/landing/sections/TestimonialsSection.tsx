@@ -13,7 +13,7 @@ export default function TestimonialsSection() {
             What Our Customers Say
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our satisfied customers 
+            Don&apos;t just take our word for it. Here&apos;s what our satisfied customers 
             have to say about their TimeCraft experience.
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function TestimonialsSection() {
 
               {/* Content */}
               <blockquote className="text-lg text-gray-200 mb-6 leading-relaxed">
-                "{testimonial.content}"
+                &ldquo;{testimonial.content}&rdquo;
               </blockquote>
 
               {/* Author */}

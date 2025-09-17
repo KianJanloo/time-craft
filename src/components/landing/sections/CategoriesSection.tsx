@@ -50,7 +50,7 @@ export default function CategoriesSection() {
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {categories.map((category, index) => (
+          {categories.map((category) => (
             <Link
               key={category.name}
               href={'/watches'}
@@ -102,7 +102,7 @@ export default function CategoriesSection() {
 
         {/* Bottom CTA */}
         <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">Can't find what you're looking for?</p>
+          <p className="text-gray-600 mb-4">Can&apos;t find what you&apos;re looking for?</p>
           <Link 
             href="/contact" 
             className="inline-flex items-center text-amber-600 hover:text-amber-700 font-semibold transition-colors"

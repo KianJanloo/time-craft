@@ -9,13 +9,6 @@ export interface ImageData {
   tags: string[];
 }
 
-const IMAGE_SIZES = {
-  small: '300x300',
-  medium: '400x400',
-  large: '600x400',
-  hero: '800x600',
-  full: '1920x1080'
-};
 
 // Watch images data
 export const watchImages: ImageData[] = [

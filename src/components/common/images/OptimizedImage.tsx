@@ -30,5 +30,5 @@ export default function OptimizedImage({
     ...(sizes && { sizes }),
   };
 
-  return <Image {...imageProps} />;
+  return <Image {...imageProps} alt={alt} />;
 }
