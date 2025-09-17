@@ -76,7 +76,7 @@ Experience the full functionality of TimeCraft with our live demo showcasing all
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/timecraft.git
+   git clone https://github.com/KianJanloo/timecraft.git
    cd timecraft
    ```
 
@@ -247,7 +247,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **Project Link**: [https://github.com/your-username/timecraft](https://github.com/your-username/timecraft)
+- **Project Link**: [https://github.com/KianJanloo/timecraft](https://github.com/KianJanloo/timecraft)
 - **Live Demo**: [https://time-craft-kian.netlify.app](https://time-craft-kian.netlify.app)
 
 ## 🙏 Acknowledgments
