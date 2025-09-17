@@ -1,5 +1,3 @@
-import Header from '@/components/common/headers/Header';
-import Footer from '@/components/common/footers/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getCollectionsData } from '@/services/data';
@@ -9,8 +7,6 @@ export default function CollectionsPage() {
   
   return (
     <div className="min-h-screen bg-white">
-      <Header />
-      <main>
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-gray-900 to-black text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -158,8 +154,6 @@ export default function CollectionsPage() {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
     </div>
   );
 }

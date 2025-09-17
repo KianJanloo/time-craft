@@ -1,8 +1,11 @@
 'use client'
 import Link from "next/link";
 import { SearchIcon, CartIcon, MenuIcon, LogoIcon, CloseIcon } from "@/services/icons";
+import { useCartStore } from "@/stores/cartStore";
 
 export default function Header() {
+  const { totalItems } = useCartStore();
+  
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,9 +68,11 @@ export default function Header() {
             </div>
             <Link href="/cart" className="text-gray-700 hover:text-amber-600 p-2 relative">
               <CartIcon size={20} />
-              <span className="absolute -top-1 -right-1 bg-amber-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                0
-              </span>
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 bg-amber-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
             </Link>
           </div>
 
@@ -164,7 +169,7 @@ export default function Header() {
                 }}
               >
                 <CartIcon size={20} className="mr-2" />
-                Cart (0)
+                Cart ({totalItems})
               </Link>
             </nav>
           </div>

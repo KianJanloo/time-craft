@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { CloseIcon, HeartIcon, CartIcon, StarIcon } from '@/services/icons';
 import { WatchData } from '@/types/watchData.type';
+import { useCartStore } from '@/stores/cartStore';
+import toast from 'react-hot-toast';
 
 interface QuickViewModalProps {
   watch: WatchData | null;
@@ -9,7 +11,21 @@ interface QuickViewModalProps {
 }
 
 export default function QuickViewModal({ watch, isOpen, onClose }: QuickViewModalProps) {
+  const { addToCart, isInCart } = useCartStore();
+  
   if (!isOpen || !watch) return null;
+
+  const handleAddToCart = () => {
+    addToCart(watch);
+    toast.success(`${watch.name} added to cart!`, {
+      icon: '🛒',
+      style: {
+        background: '#f0fdf4',
+        color: '#166534',
+        border: '1px solid #bbf7d0',
+      },
+    });
+  };
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
@@ -130,9 +146,16 @@ export default function QuickViewModal({ watch, isOpen, onClose }: QuickViewModa
 
               {/* Actions */}
               <div className="flex gap-3">
-                <button className="flex-1 cursor-pointer bg-amber-500 hover:bg-amber-600 text-white py-3 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center">
+                <button 
+                  onClick={handleAddToCart}
+                  className={`flex-1 cursor-pointer py-3 px-6 rounded-lg font-semibold transition-colors flex items-center justify-center ${
+                    isInCart(watch.id)
+                      ? 'bg-green-500 hover:bg-green-600 text-white'
+                      : 'bg-amber-500 hover:bg-amber-600 text-white'
+                  }`}
+                >
                   <CartIcon size={20} className="mr-2" />
-                  Add to Cart
+                  {isInCart(watch.id) ? 'Added to Cart' : 'Add to Cart'}
                 </button>
                 <button className="bg-gray-100 cursor-pointer hover:bg-gray-200 text-gray-700 p-3 rounded-lg transition-colors">
                   <HeartIcon size={20} />

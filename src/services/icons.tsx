@@ -13,7 +13,7 @@ import { FaLinkedin } from 'react-icons/fa6';
 import { FaDiamond } from 'react-icons/fa6';
 import { GiLaserPrecision } from 'react-icons/gi';
 import { SiCraftsman } from 'react-icons/si';
-import { FaTimes, FaPlus, FaMinus, FaTrash } from 'react-icons/fa';
+import { FaTimes, FaPlus, FaMinus, FaTrash, FaFilter, FaSortAmountUp, FaSortAmountDown } from 'react-icons/fa';
 import { FaEye } from 'react-icons/fa6';
 
 // Icon service for centralized icon management
@@ -182,4 +182,22 @@ export const EyeIcon = ({ size = 20, className = "", color }: IconProps) => (
 // Arrow Left Icon
 export const ArrowLeftIcon = ({ size = 20, className = "", color }: IconProps) => (
   <BiChevronLeft size={size} className={className} color={color} />
+);
+
+// Filter and Sort Icons
+export const FilterIcon = ({ size = 20, className = "", color }: IconProps) => (
+  <FaFilter size={size} className={className} color={color} />
+);
+
+export const SortAscendingIcon = ({ size = 20, className = "", color }: IconProps) => (
+  <FaSortAmountUp size={size} className={className} color={color} />
+);
+
+export const SortDescendingIcon = ({ size = 20, className = "", color }: IconProps) => (
+  <FaSortAmountDown size={size} className={className} color={color} />
+);
+
+// X Icon (Close/Remove)
+export const XIcon = ({ size = 20, className = "", color }: IconProps) => (
+  <FaTimes size={size} className={className} color={color} />
 );

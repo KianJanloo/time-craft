@@ -1,5 +1,3 @@
-import Header from '@/components/common/headers/Header';
-import Footer from '@/components/common/footers/Footer';
 import Image from 'next/image';
 import { getHeroData } from '@/services/data';
 import { PrecisionIcon, CraftsmanshipIcon, TimelessnessIcon } from '@/services/icons';
@@ -9,8 +7,6 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
-      <main>
         {/* Hero Section */}
         <section className="relative py-20 overflow-hidden">
           <div className="absolute inset-0">
@@ -121,8 +117,6 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
     </div>
   );
 }

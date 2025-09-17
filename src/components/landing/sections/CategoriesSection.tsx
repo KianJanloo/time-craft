@@ -53,7 +53,7 @@ export default function CategoriesSection() {
           {categories.map((category, index) => (
             <Link
               key={category.name}
-              href={category.href}
+              href={'/watches'}
               className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
             >
               {/* Background Gradient */}

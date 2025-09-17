@@ -1,7 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { HeartIcon, EyeIcon } from '@/services/icons';
+import { HeartIcon, EyeIcon, CartIcon } from '@/services/icons';
 import { WatchData } from '@/types/watchData.type';
+import { useCartStore } from '@/stores/cartStore';
+import toast from 'react-hot-toast';
 
 interface WatchCardProps {
   id: string;
@@ -38,6 +42,8 @@ export default function WatchCard({
   warranty,
   onQuickView
 }: WatchCardProps) {
+  const { addToCart, isInCart } = useCartStore();
+
   const handleQuickView = () => {
     if (onQuickView) {
       const watchData: WatchData = {
@@ -59,6 +65,36 @@ export default function WatchCard({
       onQuickView(watchData);
     }
   };
+
+  const handleAddToCart = () => {
+    const watchData: WatchData = {
+      id,
+      name,
+      price,
+      originalPrice,
+      image,
+      category,
+      isNew,
+      isSale,
+      description,
+      brand,
+      material,
+      movement,
+      waterResistance,
+      warranty
+    };
+    
+    addToCart(watchData);
+    toast.success(`${name} added to cart!`, {
+      icon: '🛒',
+      style: {
+        background: '#f0fdf4',
+        color: '#166534',
+        border: '1px solid #bbf7d0',
+      },
+    });
+  };
+
   const watchSlug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
   return (
@@ -124,8 +160,25 @@ export default function WatchCard({
         </div>
 
         {/* Add to Cart Button */}
-        <button className="cursor-pointer w-full mt-3 bg-gray-900 hover:bg-gray-800 text-white py-2 px-4 rounded-md font-medium transition-colors">
-          Add to Cart
+        <button 
+          onClick={handleAddToCart}
+          className={`w-full cursor-pointer mt-3 py-2 px-4 rounded-md font-medium transition-colors ${
+            isInCart(id)
+              ? 'bg-green-500 hover:bg-green-600 text-white'
+              : 'bg-gray-900 hover:bg-gray-800 text-white'
+          }`}
+        >
+          {isInCart(id) ? (
+            <span className="flex items-center justify-center">
+              <CartIcon size={16} className="mr-2" />
+              Added to Cart
+            </span>
+          ) : (
+            <span className="flex items-center justify-center">
+              <CartIcon size={16} className="mr-2" />
+              Add to Cart
+            </span>
+          )}
         </button>
       </div>
     </div>
